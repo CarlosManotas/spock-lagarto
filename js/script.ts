@@ -12,15 +12,21 @@ app.directive('player', ()=>{
 	}
 });
 
-app.controller('playController', ['$scope','$http', ($scope , $http)=>{
+app.controller('playController', ['$scope','$http', ($scope:any , $http:any)=>{
 	$scope.puntuacion = 0;
 	$scope.puntuacionPc = 0;
-	$scope.choicePc = 'piedra'
-	$scope.choice = document.getElementById('eleccion').addEventListener('click', function(e){
-		$scope.choicePlayer = e.path[0].alt;
-		$scope.choicePc = eleccion();
-		ganador($scope.choicePlayer , $scope.choicePc , $scope);
-	});
+	$scope.choicePc = 'spock'
+    $scope.info = '';
+    $scope.choice = document.getElementById('eleccion').addEventListener('click', function(e: any) {
+        if (e.path === undefined){
+            $scope.choicePlayer = e.target.alt;
+        }else{
+            $scope.choicePlayer = e.path[0].alt;
+        }
+        
+        $scope.choicePc = eleccion();
+        ganador($scope.choicePlayer, $scope.choicePc, $scope);
+    });
 
 }]);
 
@@ -39,42 +45,43 @@ function numeroRandom (min:number, max:number):number {
 
 
 
-function ganador (player:string , pc:string , scope):any{
+function ganador (player:string , pc:string , scope:any):any{
     if(player === pc ){
         scope.ganador = 'Empataste';
+        scope.info = 'Son iguales';
     }else{
         if(player === 'piedra' && (pc === 'tijera' || pc === 'lagarto')){
             scope.ganador = 'Ganaste';
             scope.puntuacion ++;
-            console.log(player + ' '+ pc);
+            scope.info = player + ' le gana a '+ pc;
         }
         else if(player === 'tijera' && (pc === 'papel' || pc === 'lagarto')){
             scope.ganador = 'Ganaste';
             scope.puntuacion ++;
-            console.log(player + ' '+ pc);
+            scope.info = player + ' le gana a '+ pc;
         }
 
         else if(player === 'papel' && (pc === 'spock' || pc === 'piedra')){
             scope.ganador = 'Ganaste';
             scope.puntuacion ++;
-            console.log(player + ' '+ pc);
+            scope.info = player + ' le gana a '+ pc;
         }
 
         else if(player === 'spock' && (pc === 'piedra' || pc === 'tijera')){
             scope.ganador = 'Ganaste';
             scope.puntuacion ++;
-            console.log(player + ' '+ pc);
+            scope.info = player + ' le gana a '+ pc;
         }
 
         else if(player === 'lagarto' && (pc === 'papel' || pc === 'spock')){
             scope.ganador = 'Ganaste';
             scope.puntuacion ++;
-            console.log(player + ' '+ pc);
+            scope.info = player + ' le gana a '+ pc;
         }
         else{
             scope.ganador = 'Perdiste';
             scope.puntuacionPc ++;  
-            console.log(player + ' '+ pc);        
+            scope.info = player + ' pierde contra '+ pc;        
         }
     }
 }

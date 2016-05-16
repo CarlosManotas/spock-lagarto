@@ -1,13 +1,13 @@
 
-<div class="ed-container">
+<div class="ed-container cross-center" style="height: 100vh;">
 	<div class="ed-item abcenter">
 		<div class="card">
 			<figure>
-				<img src="img/{{choicePc}}.png" alt="">
+				<img src="img/{{choicePc}}-big.png" alt="">
 			</figure>
 			<h2 >{{choicePc | uppercase}}</h2>
 		</div>
-		<div class="card">
+		<div class="card" style="margin-bottom: 5em;">
 			<div class="puntuacion">
 				<div class="player player1">
 					<p>Pc</p>
@@ -19,12 +19,27 @@
 				</div>
 			</div>
 			<div class="ganar-o-perder">
-				<p>Quien Gana? :{{ganador}}</p>
+				<p>--{{ganador}}--</p>
+			</div>
+			<div class="info">
+				<span class="small-image"><img src="img/{{choicePlayer}}.png" alt=""></span><p>- {{info}} - </p><span class="small-image"><img src="img/{{choicePc}}.png" alt=""></span>
 			</div>
 		</div>
 	</div>
+	<div class="ed-item ganador cross-center">
+		<div class="bubbles">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble b2" />
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble b5" />
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble" />
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble b6" />
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble b3" />
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble b7" />
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble b4" />
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88939/drop.png" class="bubble b8" />
+		</div>
+	</div>
 	<div class="ed-item sheldon">
-		<div class="eleccion" id='eleccion'ng-click='choice()'>
+		<div class="eleccion" id='eleccion' ng-click='choice()'>
 			<figure><img src="img/piedra.png" alt="piedra"></figure>
 			<figure><img src="img/papel.png" alt="papel"></figure>
 			<figure><img src="img/tijera.png" alt="tijera"></figure>
