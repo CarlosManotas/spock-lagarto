@@ -2532,7 +2532,7 @@ h6 {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: #888;
+  background-color: #00a388;
   height: 80px; }
   .sheldon .eleccion {
     display: -ms-flexbox;
@@ -2562,7 +2562,8 @@ h6 {
       width: 100px;
       height: 100vh;
       left: calc(100vw - 100px);
-      top: 0; }
+      top: 0;
+      background-color: #fff; }
       .sheldon .eleccion {
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
@@ -2583,14 +2584,20 @@ figure {
   margin: 0 auto;
   margin-top: 2%;
   border-radius: 8px;
-  border: 1px solid #666;
-  max-width: 350px; }
+  border: 1px solid #ff6138;
+  box-shadow: 1px 1px 3px #ffff9d, -1px -1px 3px #ffff9d;
+  max-width: 350px;
+  background-color: rgba(190, 235, 159, 0.5); }
   .card h2 {
-    margin: 0; }
+    margin: 0;
+    color: #000; }
   .card figure {
-    max-width: 300px;
+    max-width: 200px;
     margin: auto;
     line-height: 0; }
+  @media screen and (min-width: 480px) {
+    .card figure {
+      max-width: 300px; } }
   .card .puntuacion {
     display: -ms-flexbox;
     display: flex;
@@ -2608,3 +2615,130 @@ figure {
       width: 48%; }
       .card .puntuacion .player p {
         border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+.ganador {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #ff6138;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transform-origin: 50% 50%;
+  text-align: center;
+  z-index: -1; }
+  @media screen and (min-width: 1024px) {
+    .ganador {
+      background-color: #00a388; } }
+
+.bubbles {
+  width: 160px;
+  padding-left: 20px;
+  position: absolute;
+  bottom: 0;
+  margin-left: -90px;
+  left: 50%;
+  display: inline-block; }
+
+.bubble {
+  animation: short-bubble 1500ms linear infinite;
+  animation-fill-mode: forwards;
+  height: 10px;
+  width: 9px;
+  border: 1px solid rgba(240, 240, 240, 0.5);
+  border-radius: 50%; }
+
+.b2 {
+  animation: medium-bubble 5000ms linear infinite;
+  animation-fill-mode: forwards;
+  margin-left: -7px;
+  margin-top: 25px;
+  height: 13px;
+  width: 12px; }
+
+.b3 {
+  animation-duration: 3500ms;
+  margin-left: -5px;
+  margin-bottom: 10px; }
+
+.b4 {
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+  margin: 0 0 40px -9px;
+  height: 7px;
+  width: 6px; }
+
+.b5 {
+  animation: medium-bubble 3000ms linear infinite;
+  animation-fill-mode: forwards;
+  margin-left: -1px;
+  margin-top: 100px;
+  height: 5px;
+  width: 4px; }
+
+.b6 {
+  animation-duration: 3000ms;
+  margin-left: -8px;
+  margin-bottom: 50px; }
+
+.b7 {
+  animation-duration: 6000ms;
+  margin-left: -3px;
+  margin-bottom: 50px;
+  height: 7px;
+  width: 6px; }
+
+.b8 {
+  -webkit-animation: medium-bubble 2000ms linear infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation: medium-bubble 2000ms linear infinite;
+  animation-fill-mode: forwards;
+  margin-left: -13px;
+  margin-bottom: 30px; }
+
+@keyframes short-bubble {
+  0% {
+    transform: translate3d(5px, 0, 0);
+    opacity: 0; }
+  13% {
+    transform: translate3d(2px, -20px, 0);
+    opacity: 1; }
+  20% {
+    transform: translate3d(5px, -40px, 0) scale(1.2); }
+  30% {
+    transform: translate3d(0px, -60px, 0); }
+  40% {
+    transform: translate3d(8px, -80px, 0); }
+  50% {
+    transform: translate3d(3px, -100px, 0); }
+  60% {
+    transform: translate3d(8px, -120px, 0); }
+  70% {
+    opacity: 0.4; }
+  80%, 100% {
+    transform: translate3d(0, -200px, 0);
+    opacity: 0; } }
+
+@keyframes medium-bubble {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0; }
+  5% {
+    transform: translate3d(4px, -20px, 0);
+    opacity: 1; }
+  10% {
+    transform: translate3d(2px, -40px, 0) rotate(10deg); }
+  20% {
+    transform: translate3d(7px, -80px, 0) rotate(14deg) scale(0.7); }
+  30% {
+    transform: translate3d(5px, -120px, 0) rotate(15deg); }
+  40% {
+    transform: translate3d(1px, -160px, 0) rotate(20deg); }
+  50% {
+    transform: translate3d(2px, -200px, 0) rotate(18deg) scale(1.1); }
+  60% {
+    transform: translate3d(-3px, -240px, 0) rotate(22deg);
+    opacity: 0.4; }
+  100% {
+    transform: translate3d(0, -400px, 0);
+    opacity: 0; } }
