@@ -13,11 +13,20 @@ app.controller('playController', ['$scope', '$http', function ($scope, $http) {
         $scope.puntuacion = 0;
         $scope.puntuacionPc = 0;
         $scope.choicePc = 'piedra';
-        $scope.choice = document.getElementById('eleccion').addEventListener('click', function (e) {
-            $scope.choicePlayer = e.path[0].alt;
-            $scope.choicePc = eleccion();
-            ganador($scope.choicePlayer, $scope.choicePc, $scope);
-        });
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $scope.choice = document.getElementById('eleccion').addEventListener('touchstart', function (e) {
+                $scope.choicePlayer = e.target.alt;
+                $scope.choicePc = eleccion();
+                ganador($scope.choicePlayer, $scope.choicePc, $scope);
+            });
+        }
+        else {
+            $scope.choice = document.getElementById('eleccion').addEventListener('click', function (e) {
+                $scope.choicePlayer = e.path[0].alt;
+                $scope.choicePc = eleccion();
+                ganador($scope.choicePlayer, $scope.choicePc, $scope);
+            });
+        }
     }]);
 function eleccion() {
     var eleccion = ['papel', 'tijera', 'piedra', 'spock', 'lagarto'];
@@ -36,32 +45,32 @@ function ganador(player, pc, scope) {
         if (player === 'piedra' && (pc === 'tijera' || pc === 'lagarto')) {
             scope.ganador = 'Ganaste';
             scope.puntuacion++;
-            console.log(player + ' ' + pc);
+            console.log(player + ' le gana a ' + pc);
         }
         else if (player === 'tijera' && (pc === 'papel' || pc === 'lagarto')) {
             scope.ganador = 'Ganaste';
             scope.puntuacion++;
-            console.log(player + ' ' + pc);
+            console.log(player + ' le gana a ' + pc);
         }
         else if (player === 'papel' && (pc === 'spock' || pc === 'piedra')) {
             scope.ganador = 'Ganaste';
             scope.puntuacion++;
-            console.log(player + ' ' + pc);
+            console.log(player + ' le gana a ' + pc);
         }
         else if (player === 'spock' && (pc === 'piedra' || pc === 'tijera')) {
             scope.ganador = 'Ganaste';
             scope.puntuacion++;
-            console.log(player + ' ' + pc);
+            console.log(player + ' le gana a ' + pc);
         }
         else if (player === 'lagarto' && (pc === 'papel' || pc === 'spock')) {
             scope.ganador = 'Ganaste';
             scope.puntuacion++;
-            console.log(player + ' ' + pc);
+            console.log(player + ' le gana a ' + pc);
         }
         else {
             scope.ganador = 'Perdiste';
             scope.puntuacionPc++;
-            console.log(player + ' ' + pc);
+            console.log(player + ' Pierde contra ' + pc);
         }
     }
 }
