@@ -2615,6 +2615,21 @@ figure {
       width: 48%; }
       .card .puntuacion .player p {
         border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+  .card .info {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center; }
+  .card .small-image {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle; }
+    .card .small-image img {
+      max-width: 100%; }
 
 .ganador {
   position: absolute;

@@ -102,6 +102,20 @@ figure{
 			}
 		}
 	}
+	.info{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items:center;
+	}
+	.small-image{
+		width: 30px;
+		display: inline-block;
+		vertical-align:middle;
+		img{
+			max-width: 100%;
+		}
+	}
 }
 
 .ganador{

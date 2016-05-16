@@ -12,7 +12,7 @@ app.directive('player', ()=>{
 	}
 });
 
-app.controller('playController', ['$scope','$http', ($scope , $http)=>{
+app.controller('playController', ['$scope','$http', ($scope:any , $http:any)=>{
 	$scope.puntuacion = 0;
 	$scope.puntuacionPc = 0;
 	$scope.choicePc = 'spock'
@@ -45,7 +45,7 @@ function numeroRandom (min:number, max:number):number {
 
 
 
-function ganador (player:string , pc:string , scope):any{
+function ganador (player:string , pc:string , scope:any):any{
     if(player === pc ){
         scope.ganador = 'Empataste';
         scope.info = 'Son iguales';
