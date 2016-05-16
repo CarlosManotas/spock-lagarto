@@ -1,0 +1,30 @@
+{
+  "name": "juego-typescript-angular",
+  "version": "1.0.0",
+  "description": "Juego hecho con typescript y angularjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Manotas <carlosmanotas@hotmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CarlosManotas/spock-lagarto"
+  },
+  "bugs": {
+    "url": "https://github.com/CarlosManotas/spock-lagarto/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.1",
+    "gulp-typescript": "^2.13.4",
+    "gulp-uglify": "^1.5.3"
+  }
+}

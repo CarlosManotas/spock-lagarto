@@ -1,0 +1,93 @@
+.sheldon{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left:0;
+	background-color: #888;
+	height: 80px;
+	.eleccion{
+		display: flex;
+		width: 100%;
+		max-width: 1200px;
+		margin: auto;
+		flex-flow:row nowrap;
+		justify-content: space-around;
+		align-items:center;
+		height: 100%;
+		figure{
+			margin: 0;
+			padding: 0;
+			width: 80px;
+			vertical-align: middle;
+			text-align: center;
+			line-height: 0;
+			cursor: pointer;
+			img{
+				max-width: 100% !important;
+			}
+		}
+	}
+		
+	@include desde(web){
+		width: 100px;
+		height: 100vh;
+		left: calc(100vw - 100px);
+		top:0;
+		.eleccion{
+			flex-flow: column nowrap;
+			width: 100%;
+			figure{
+				width:100%;
+			}
+		}
+	}
+}
+$color1: #ff6138;
+$color2:#ffff9d;
+$color3:#beeb9f;
+$color4:#79bd8f;
+$color5:#00a388;
+h1{
+	color: $color1;
+}
+
+figure{
+	margin: 0;
+	padding: 0;
+	img{
+		max-width: 100%;
+	}
+}
+
+
+.card{
+	margin: 0 auto;
+	margin-top: 2%;
+	border-radius: 8px;
+	border: 1px solid #666;
+	max-width: 350px;
+	h2{
+		margin: 0;
+	}
+	figure{
+		max-width: 300px;
+		margin: auto;
+		line-height: 0;
+	}
+	.puntuacion{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items:center;
+		.player{
+			background: $color5;
+			border-radius: 8px;
+			color:#fff;
+			margin-top: 2%;
+			width: 48%;
+			p{
+				border-bottom: 1px solid rgba(255,255,255,.3);
+			}
+		}
+	}
+}

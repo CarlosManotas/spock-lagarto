@@ -1,0 +1,35 @@
+
+<div class="ed-container">
+	<div class="ed-item abcenter">
+		<div class="card">
+			<figure>
+				<img src="img/{{choicePc}}.png" alt="">
+			</figure>
+			<h2 >{{choicePc | uppercase}}</h2>
+		</div>
+		<div class="card">
+			<div class="puntuacion">
+				<div class="player player1">
+					<p>Pc</p>
+					{{puntuacionPc}}
+				</div>
+				<div class="player player2">
+					<p>Player</p>
+					{{puntuacion}}
+				</div>
+			</div>
+			<div class="ganar-o-perder">
+				<p>Quien Gana? :{{ganador}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="ed-item sheldon">
+		<div class="eleccion" id='eleccion'ng-click='choice()'>
+			<figure><img src="img/piedra.png" alt="piedra"></figure>
+			<figure><img src="img/papel.png" alt="papel"></figure>
+			<figure><img src="img/tijera.png" alt="tijera"></figure>
+			<figure><img src="img/lagarto.png" alt="lagarto"></figure>
+			<figure><img src="img/spock.png" alt="spock"></figure>
+		</div>
+	</div>
+</div>
